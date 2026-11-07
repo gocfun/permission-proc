@@ -1,0 +1,5 @@
+error: several arguments look like claims; mark one with `#[claims]` or use `#[permission(..., claims = name)]`
+ --> tests/ui/ambiguous_claims.rs:5:23
+  |
+5 | fn handler(a: Claims, b: Claims) -> Result<(), ()> {
+  |                       ^

@@ -1,0 +1,22 @@
+[package]
+name = "permission_proc_macros"
+description = "Procedural macros for the `permission_proc` crate. Use `permission_proc` instead of depending on this crate directly."
+documentation = "https://docs.rs/permission_proc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories = ["authentication", "web-programming", "rust-patterns"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro2 = "1.0.60"
+quote = "1.0.30"
+syn = { version = "2.0.30", features = ["full"] }

@@ -1,0 +1,5 @@
+error: expected a permission string, `any(...)` or `all(...)`
+ --> tests/ui/unknown_combinator.rs:4:14
+  |
+4 | #[permission(either("a", "b"))]
+  |              ^^^^^^

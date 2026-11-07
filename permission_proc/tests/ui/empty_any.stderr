@@ -1,0 +1,5 @@
+error: `any(...)` needs at least one permission
+ --> tests/ui/empty_any.rs:4:14
+  |
+4 | #[permission(any())]
+  |              ^^^

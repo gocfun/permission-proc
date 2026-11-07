@@ -1,0 +1,5 @@
+error: the claims argument is ignored with `_`; give it a name, e.g. `claims`
+ --> tests/ui/wildcard_claims.rs:5:12
+  |
+5 | fn handler(_: Claims) -> Result<(), ()> {
+  |            ^

@@ -1,0 +1,5 @@
+error: cannot find the claims argument of `handler`; add an argument whose type ends in `Claims`, mark one with `#[claims]`, or use `#[permission(..., claims = name)]`
+ --> tests/ui/missing_claims.rs:5:4
+  |
+5 | fn handler(id: u64) -> Result<(), ()> {
+  |    ^^^^^^^

@@ -1,0 +1,28 @@
+[package]
+name = "permission_proc"
+description = "Declarative permission checks for Rust functions and web handlers: #[permission(\"posts:write\")], framework-agnostic and no_std."
+documentation = "https://docs.rs/permission_proc"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+readme.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+permission_proc_macros = { version = "=0.1.0", path = "../permission_proc_macros" }
+
+[dev-dependencies]
+axum = "0.8"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net"] }
+trybuild = "1.0.80"
+
+[[example]]
+name = "axum"
+path = "examples/axum.rs"

@@ -1,0 +1,5 @@
+error: permission must not be empty
+ --> tests/ui/empty_permission.rs:4:14
+  |
+4 | #[permission("")]
+  |              ^^

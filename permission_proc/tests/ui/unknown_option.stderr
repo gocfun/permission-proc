@@ -1,0 +1,5 @@
+error: unknown option `claim`; expected `claims`, `result` or `crate`
+ --> tests/ui/unknown_option.rs:4:19
+  |
+4 | #[permission("a", claim = claims)]
+  |                   ^^^^^

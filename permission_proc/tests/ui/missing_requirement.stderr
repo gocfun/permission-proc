@@ -1,0 +1,7 @@
+error: missing permission, e.g. `#[permission("posts:read")]`
+ --> tests/ui/missing_requirement.rs:4:1
+  |
+4 | #[permission]
+  | ^^^^^^^^^^^^^
+  |
+  = note: this error originates in the attribute macro `permission` (in Nightly builds, run with -Z macro-backtrace for more info)
