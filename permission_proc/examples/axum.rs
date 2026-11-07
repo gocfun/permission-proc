@@ -198,7 +198,7 @@ mod middleware {
         State(state): State<Arc<AppState>>,
         mut request: Request,
         next: Next,
-    ) -> Result<Response, Response> {
+    ) -> Response {
         let unauthenticated = |message| {
             error_response(
                 StatusCode::UNAUTHORIZED,
@@ -208,20 +208,20 @@ mod middleware {
             )
         };
 
-        let token = request
+        let Some(token) = request
             .headers()
             .get("Authorization")
             .and_then(|value| value.to_str().ok())
             .and_then(|value| value.strip_prefix("Bearer "))
-            .ok_or_else(|| unauthenticated("Missing authorization token"))?;
-        let claims = state
-            .tokens
-            .get(token)
-            .cloned()
-            .ok_or_else(|| unauthenticated("Invalid authorization token"))?;
+        else {
+            return unauthenticated("Missing authorization token");
+        };
+        let Some(claims) = state.tokens.get(token).cloned() else {
+            return unauthenticated("Invalid authorization token");
+        };
 
         request.extensions_mut().insert(claims);
-        Ok(next.run(request).await)
+        next.run(request).await
     }
 }
 
